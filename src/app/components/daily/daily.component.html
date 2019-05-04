@@ -1,0 +1,20 @@
+<ion-card class="daily_forecast_table" *ngIf="weather">
+  <ion-row *ngFor="let daily of weather.daily.data">
+    <ion-col>
+      <table>
+        <tr>
+          <td>
+            {{daily.time*1000 | date: 'EEE, MMM d'}}
+          </td>
+          <td>
+            <img [src]="weatherIcon(daily.icon)">
+          </td>
+          <td>
+              {{fahrenheitToCelsius(daily.temperatureMax)}}&deg;C / 
+              {{round(daily.temperatureMax)}}&deg;F
+          </td>
+        </tr>
+      </table>
+    </ion-col>
+  </ion-row>
+</ion-card>

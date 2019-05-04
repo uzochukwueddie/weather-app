@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiKey: '',
+  weatherApi: 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast',
+  geoIp: 'https://geoip-db.com/json/'
 };
 
 /*

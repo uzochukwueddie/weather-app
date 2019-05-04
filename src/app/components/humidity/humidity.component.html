@@ -1,0 +1,48 @@
+<ion-card class="humidity_arc">
+  <ion-card-header>Comfort Level</ion-card-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <circle-progress
+          [percent]="weather.currently.humidity*100"
+          [radius]="100"
+          [title]="round(weather.currently.humidity*100)+'%'"
+          [showTitle]="true"
+          [showUnits]="false"
+          [titleColor]="'#ffffff'"
+          [titleFontSize]="40"
+          [showSubtitle]="true"
+          [subtitle]="'Humidity'"
+          [subtitleFontSize]="25"
+          [subtitleColor]="'#ffffff'"
+          [clockwise]="false"
+          [outerStrokeWidth]="10"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#ffffff'"
+          [innerStrokeColor]="'#bbbcbf'"
+        ></circle-progress>
+      </ion-col>
+
+      <ion-col class="col__info" size="8">
+        <ion-row>
+          <ion-col size="12">
+            <span>Visibility</span> {{weather.currently.visibility}}
+          </ion-col>
+          <ion-col size="12">
+            <span>UV Index</span> {{uvIndex(weather.currently.uvIndex)}}
+          </ion-col>
+          <ion-col size="12">
+            <span>Pressure</span> {{round(weather.currently.pressure)}} hPa
+          </ion-col>
+          <ion-col size="12">
+            <span>Feels like</span> {{fahrenheitToCelsius(weather.currently.apparentTemperature)}}&deg;C
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+</ion-card>

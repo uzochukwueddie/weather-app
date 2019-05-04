@@ -1,0 +1,111 @@
+ion-header {
+    ion-toolbar {
+        --background: #1E5799;
+
+        ion-title {
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+    }
+}
+
+ion-content {
+    --background: #1E5799;
+
+    ion-card {
+        --background: #1E5799;
+        box-shadow: none !important;
+    }
+
+    ion-item {
+        --background: #1E5799;
+        --color: white;
+    }
+
+    .current__temp {
+        margin-top: 30px;
+
+        span {
+            margin: 0 auto;
+            font-size: 4rem;
+        }
+    }
+
+    .summary {
+        margin-top: -5px;
+
+        span {
+            margin: 0 auto;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+    }
+
+    .temp {
+        margin-top: -13px;
+        padding: 0 !important;
+
+        p {
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+    }
+
+    ion-card-header {
+        max-height: 20px;
+        display: flex !important;
+        font-weight: 400;
+        font-size: 12px;
+
+        .updated__time {
+            color: white;
+            margin-top: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            margin-left: auto;
+        }
+    }
+
+    .hourly__forecast {
+        overflow: hidden !important;
+        
+        ion-row {
+            overflow-x: scroll !important;
+            ion-col {
+                margin-top: 5px;
+                min-width: 60px !important;
+                table {
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+                        margin: 10px;
+                    }
+
+                    .time__row {
+                        width: 100% !important;
+                        text-align: center;
+                        td {
+                            margin-bottom: 20px !important;
+                            color: white;
+                            font-size: 11px;
+                        }
+                    }
+
+                    .temp__row {
+                        width: 100%;
+                        text-align: center;
+                        td {
+                            color: white;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

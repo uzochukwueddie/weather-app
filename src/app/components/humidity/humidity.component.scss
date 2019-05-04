@@ -1,0 +1,28 @@
+.humidity_arc {
+    box-shadow: none !important;
+    height: 30%;
+
+    ion-card-header {
+        color: white;
+        font-size: 16px;
+    }
+
+    ion-col:nth-child(1) {
+        p {
+            color: white;
+            text-align: center;
+        }
+    }
+
+    .col__info {
+        color: white;
+        text-align: right;
+        margin-top: 13px;
+
+        span {
+            color: #e5e5e5;
+            float: left !important;
+            margin-left: 50px;
+        }
+    }
+}

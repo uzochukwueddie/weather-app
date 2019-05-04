@@ -1,0 +1,12 @@
+<ion-card class="chart">
+  <ion-card-content>
+    <canvas baseChart width="600" height="400"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType">
+    </canvas>
+  </ion-card-content>
+</ion-card>

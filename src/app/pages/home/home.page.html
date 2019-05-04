@@ -1,0 +1,66 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      {{city}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ng-container *ngIf="weather">
+    <ion-card>
+      <ion-item lines="none" class="current__temp">
+        <span>{{fahrenheitToCelsius(weather.currently.temperature)}}&deg;C</span>
+      </ion-item>
+      <ion-item lines="none" class="summary">
+        <span>{{weather.currently.summary}}</span>
+      </ion-item>
+      <ion-item lines="none" class="temp">
+        <p>{{fahrenheitToCelsius(weather.currently.temperature)}}&deg;C / 
+            {{round(weather.currently.temperature)}}&deg;F</p>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <p class="updated__time">Updated {{weather.currently.time*1000 | date: 'h:mm a'}}</p>
+        <a href="https://darksky.net/poweredby/" target="_blank">Powered by Dark Sky</a>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card class="hourly__forecast">
+      <ion-row nowrap>
+        <ion-col *ngFor="let hourly of weather.hourly.data">
+          <table>
+            <tr class="time__row">
+              <td>{{hourly.time*1000 | date: 'h:mm a'}}</td>
+            </tr>
+            <tr>
+              <td>
+                <img [src]="weatherIcon(hourly.icon)">
+              </td>
+            </tr>
+            <tr class="temp__row">
+              <td>{{fahrenheitToCelsius(hourly.temperature)}}&deg;C</td>
+            </tr>
+          </table>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <app-daily></app-daily>
+
+    <app-chart
+      [data]="chartData"
+      [labels]="chartLabels">
+    </app-chart>
+
+    <app-humidity [weather]="weather"></app-humidity>
+
+    <app-wind [weather]="weather"></app-wind>
+
+
+  </ng-container>
+
+</ion-content>

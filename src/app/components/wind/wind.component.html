@@ -1,0 +1,32 @@
+<ion-card class="wind">
+  <ion-card-header>Wind</ion-card-header>
+
+  <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <div class="wind__turbine">
+            <div class="turbine__one">
+              <img src="assets/blade.png">
+              <div class="pole"></div>
+            </div>
+            <div class="turbine__two">
+              <img src="assets/blade.png">
+              <div class="pole"></div>
+            </div>
+          </div>
+        </ion-col>
+  
+        <ion-col class="col__info" size="8">
+          <ion-row>
+            <ion-col size="12">
+              <span>Direction</span> {{windDirection(weather.currently.windBearing)}}
+            </ion-col>
+            <ion-col size="12">
+              <span>Speed</span> {{round(weather.currently.windSpeed * 1.609)}} km/h
+            </ion-col>
+          </ion-row>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+</ion-card>
