@@ -1,4 +1,3 @@
-import { WindComponent } from './../../components/wind/wind.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -12,6 +11,8 @@ import { HomePage } from './home.page';
 import { DailyComponent } from 'src/app/components/daily/daily.component';
 import { ChartComponent } from 'src/app/components/chart/chart.component';
 import { HumidityComponent } from 'src/app/components/humidity/humidity.component';
+import { SearchComponent } from 'src/app/components/search/search.component';
+import { WindComponent } from 'src/app/components/wind/wind.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { HumidityComponent } from 'src/app/components/humidity/humidity.componen
     DailyComponent,
     ChartComponent,
     HumidityComponent,
-    WindComponent
+    WindComponent,
+    SearchComponent
   ]
 })
 export class HomePageModule {}

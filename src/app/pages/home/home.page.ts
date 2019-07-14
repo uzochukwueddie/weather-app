@@ -17,6 +17,7 @@ export class HomePage implements OnInit {
   weather: Weather;
   chartData = [];
   chartLabels = [];
+  isEmpty = true;
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
@@ -43,14 +44,26 @@ export class HomePage implements OnInit {
   weatherInformation(lat, lng) {
     this.weatherService.getWeatherInfo(lat, lng)
       .subscribe((data: Weather) => {
-        this.weather = data;
+        this.isEmpty = true;
 
-        const dailyData = this.weather.daily.data;
-        for (const i of dailyData) {
-          this.chartData.push(this.fahrenheitToCelsius(i.temperatureMax));
-          this.chartLabels.push(formatDate(i.time * 1000, 'EEE, MMM d', this.locale));
-        }
+        setTimeout(() => {
+          this.isEmpty = false;
+          this.weather = data;
+
+          const dailyData = this.weather.daily.data;
+          for (const i of dailyData) {
+            this.chartData.push(this.fahrenheitToCelsius(i.temperatureMax));
+            this.chartLabels.push(formatDate(i.time * 1000, 'EEE, MMM d', this.locale));
+          }
+        }, 2000);
       });
+  }
+
+  placesResult(e) {
+    this.city = e.name;
+    this.latCoords = e.latlng.lat;
+    this.lngCoords = e.latlng.lng;
+    this.weatherInformation(this.latCoords, this.lngCoords);
   }
 
   round(temp) {

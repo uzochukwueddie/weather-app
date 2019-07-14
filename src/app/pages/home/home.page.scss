@@ -108,4 +108,14 @@ ion-content {
             }
         }
     }
+
+    ion-spinner {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: white;
+    }
 }
