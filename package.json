@@ -36,7 +36,7 @@
     "lodash": "^4.17.14",
     "ng-circle-progress": "^1.4.0",
     "ng2-charts": "^2.2.3",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "places.js": "^1.16.4",
     "rxjs": "~6.5.1",
     "tar": "^4.4.8",
